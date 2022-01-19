@@ -1,0 +1,41 @@
+abstract class Printer {
+	abstract void print();
+}
+
+class SamsungPrinter extends Printer {
+	void print() {
+		System.out.println("프린터 생성(by Samsung)");
+	}
+}
+
+class EpsonPrinter extends Printer {
+	void print() {
+		System.out.println("프린터 생성(by Epson)");
+	}
+}
+
+public class Polymorphism2 {
+
+	public static Printer printerUse(int kind) {
+		if (kind == 1) {
+			//Printer prn1 = new SamsungPrinter();
+			//return prn1;
+			return new SamsungPrinter();
+		} else {
+			//Printer prn2 = new EpsonPrinter();
+			//return prn2;
+			return new EpsonPrinter();
+		}
+	}
+
+	public static void main(String[] args) {
+		// 생성된 프린터가 삼성 프린터인지 엡손 프린터인지 중요하지 않고
+		// 난 생성된 프린터 객체의 프린트 기능만 쓸 것이다.
+
+		Printer p1 = printerUse(1);
+		p1.print();
+		
+		Printer p2 = printerUse(2);
+		p2.print();
+	}
+}

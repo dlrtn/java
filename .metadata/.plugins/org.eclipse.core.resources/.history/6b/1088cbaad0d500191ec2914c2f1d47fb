@@ -1,0 +1,9 @@
+package com.company.length;
+
+class Book {
+	
+	Book() {
+		
+	}
+	
+}
